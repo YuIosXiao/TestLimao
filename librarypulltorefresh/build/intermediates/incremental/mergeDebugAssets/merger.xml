@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="D:\linshi\TestLimao\librarypulltorefresh\src\main\assets"/><source path="D:\linshi\TestLimao\librarypulltorefresh\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="D:\linshi\TestLimao\librarypulltorefresh\src\debug\assets"/></dataSet></merger>

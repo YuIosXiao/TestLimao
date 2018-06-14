@@ -1,0 +1,313 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+//        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath 'com.android.tools.build:gradle:2.4.0-alpha7'
+    }
+}
+
+apply plugin: 'AndResGuard'
+apply plugin: 'com.android.application'
+//apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+
+    signingConfigs {
+        jks_config {
+            keyAlias rootProject.ext.signingConfig.keyAlias
+            keyPassword rootProject.ext.signingConfig.keyPassword
+            storeFile file(rootProject.ext.signingConfig.storeFile)
+            storePassword rootProject.ext.signingConfig.storePassword
+        }
+    }
+
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+
+    useLibrary 'org.apache.http.legacy'
+
+    defaultConfig {
+        applicationId "com.first.saccelerator"
+        minSdkVersion 17
+        targetSdkVersion 26
+
+        versionCode 15//因为google市场的code值为15，所以统一改成15,
+        versionName "1.1.2"//112 测试包
+        flavorDimensions "versionCode"//版本名后面添加一句话，意思就是flavor dimension 它的维度就是该版本号，这样维度就是都是统一的了
+        multiDexEnabled true
+
+//        ndk {
+//            //选择要添加的对应cpu类型的.so库。
+//            // 设置支持的 SO 库构架
+//            abiFilters 'armeabi', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'//, 'armeabi-v7a'
+////            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a'
+//            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+//        }
+
+//        manifestPlaceholders = [
+//                JPUSH_PKGNAME: applicationId,
+//                JPUSH_APPKEY : "b579d9cce9619b3324a18134", //JPush上注册的包名对应的appkey.
+//                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+//        ]
+
+        //RenderScript向下兼容 start
+        renderscriptTargetApi 18
+        renderscriptSupportModeEnabled true
+        //RenderScript向下兼容 end
+    }
+
+    dexOptions {
+//        incremental true
+        javaMaxHeapSize "4g"
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.jks_config
+        }
+        debug {
+            signingConfig signingConfigs.jks_config
+            minifyEnabled false
+        }
+    }
+
+    productFlavors {
+        moren_lm {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "moren"]
+        }
+//        aptoide_lm {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "aptoide"]
+//        }
+//        google_lm {//google 已经发布到14了
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "google"]
+//        }
+//        smss1 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "smss1"]
+//        }
+//        smss2 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "smss2"]
+//        }
+//        smss3 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "smss3"]
+//        }
+//        smss4 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "smss4"]
+//        }
+//        smss5 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "smss5"]
+//        }
+//        baidu1 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "baidu1"]
+//        }
+//        baidu2 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "baidu2"]
+//        }
+//        baidu3 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "baidu3"]
+//        }
+//        baidu4 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "baidu4"]
+//        }
+//        sg1 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "sg1"]
+//        }
+//        sg2 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "sg2"]
+//        }
+//        sg3 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "sg3"]
+//        }
+//        sg4 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "sg4"]
+//        }
+//        sm1 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "sm1"]
+//        }
+//        sm2 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "sm2"]
+//        }
+//        sm3 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "sm3"]
+//        }
+//        sm4 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "sm4"]
+//        }
+//        guge1 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "guge1"]
+//        }
+//        guge2 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "guge2"]
+//        }
+//        guge3 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "guge3"]
+//        }
+//        guge4 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "guge4"]
+//        }
+//        google1 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "google1"]
+//        }
+//        google2 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "google2"]
+//        }
+//        baidu {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "baidu"]
+//        }
+//----------------------------------------------------------------------------------------------------
+        //应用名称是狸猫加速器
+//        bd1 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "bd1"]
+//        }
+//        bd2 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "bd2"]
+//        }
+//        bd3 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "bd3"]
+//        }
+//        bd4 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "bd4"]
+//        }
+//        bdfeed1 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "bdfeed1"]
+//        }
+// -------------------------------------------------------------------------------
+        //暂时去掉
+//        jg_lm {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "jg"]
+//        }
+//        xz1 {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xz1"]
+//        }
+//        fyflow {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "fyflow"]
+//        }
+//        jzjad {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "jzjad"]
+//        }
+//-------------------------------------------------------------------------------
+    }
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:26.0.2'
+    compile 'com.android.support:support-v4:26.0.2'
+    compile 'com.android.support:recyclerview-v7:26.0.2'
+    compile 'com.android.support:design:26.0.2'
+    compile 'com.android.support:preference-leanback-v17:26.0.2'//TV  UI控件导入
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+//    apt 'com.jakewharton:butterknife-compiler:8.1.0'
+//    compile 'com.jakewharton:butterknife:8.1.0'
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.orhanobut:logger:1.15'
+    compile 'io.reactivex:rxandroid:1.2.1'//引入rxandroid
+    compile 'io.reactivex:rxjava:1.2.2'//引入rxjava
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'//引入retrofit
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'//引入json转换器，方便将返回的数据转换为json格式
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'//引入rxjava适配器，方便rxjava与retrofit的结合
+    compile 'com.squareup.okhttp3:okhttp:3.4.0'//引入okhttp
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.0'//引入Log拦截器，方便DEBUG模式输出log信息
+    // Stetho
+    compile 'com.facebook.stetho:stetho:1.4.1'
+    compile 'com.facebook.stetho:stetho-okhttp3:1.4.1'
+    compile 'org.bouncycastle:bcprov-jdk15on:1.52'
+    compile('com.googlecode.json-simple:json-simple:1.1.1') {
+        exclude group: 'junit', module: 'junit'
+        exclude group: 'org.hamcrest', module: 'hamcrest-core'
+    }
+    compile project(':librarypulltorefresh')
+    compile files('libs/AMap_Location_V2.5.1_20160616.jar')
+    //picasso
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0'
+    //友盟依赖包
+//    compile 'com.umeng.analytics:analytics:latest.integration'
+    compile files('libs/MobTools-2017.1024.1907.jar')
+    compile files('libs/MobCommons-2017.1024.1907.jar')
+    compile files('libs/ShareSDK-Core-3.1.1.jar')
+    compile files('libs/ShareSDK-QQ-3.1.1.jar')
+    compile files('libs/ShareSDK-SinaWeibo-3.1.1.jar')
+    compile files('libs/ShareSDK-Wechat-3.1.1.jar')
+    compile files('libs/ShareSDK-Wechat-Core-3.1.1.jar')
+    compile files('libs/ShareSDK-Wechat-Moments-3.1.1.jar')
+    compile files('libs/umeng-analytics-7.5.0.jar')
+    compile files('libs/umeng-common-1.5.0.jar')
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.loopj.android:android-async-http:1.4.9'
+    compile project(path: ':library')
+    compile 'eu.chainfire:libsuperuser:1.0.0.+'
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+//        classpath 'com.tencent.mm:AndResGuard-gradle-plugin:1.1.16'
+        classpath 'com.tencent.mm:AndResGuard-gradle-plugin:1.2.13'
+    }
+}
+
+andResGuard {
+    // mappingFile = file("./resource_mapping.txt")
+    mappingFile = null
+    use7zip = true
+    useSign = true
+    // it will keep the origin path of your resources when it's true
+    keepRoot = false
+    whiteList = [
+            // your icon
+            "R.drawable.icon",
+            // for fabric
+            "R.string.com.crashlytics.*",
+            // for umeng update
+            "R.string.umeng*",
+            "R.string.UM*",
+            "R.string.tb_*",
+            "R.layout.umeng*",
+            "R.layout.tb_*",
+            "R.drawable.umeng*",
+            "R.drawable.tb_*",
+            "R.anim.umeng*",
+            "R.color.umeng*",
+            "R.color.tb_*",
+            "R.style.*UM*",
+            "R.style.umeng*",
+            "R.id.umeng*",
+            // umeng share for sina
+            "R.drawable.sina*",
+            // for google-services.json
+            "R.string.google_app_id",
+            "R.string.gcm_defaultSenderId",
+            "R.string.default_web_client_id",
+            "R.string.ga_trackingId",
+            "R.string.firebase_database_url",
+            "R.string.google_api_key",
+            "R.string.google_crash_reporting_api_key"
+    ]
+    compressFilePattern = [
+            "*.png",
+            "*.jpg",
+            "*.jpeg",
+            "*.gif",
+            "resources.arsc"
+    ]
+    sevenzip {
+        artifact = 'com.tencent.mm:SevenZip:1.2.13'
+        //path = "/usr/local/bin/7za"
+    }
+}

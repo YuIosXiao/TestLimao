@@ -1,0 +1,7 @@
+ip 10.8.0.2
+dns 114.114.114.114
+dns 8.8.8.8
+dns_ttl 120
+route 0.0.0.0/0
+direct_domain  instagram cdninstagram twitter twimg facebook fbcdn google gstatic.com xiaoguoqi.com apple.com icloud.com itunes.com crashlytics.com mzstatic.com localhost
+proxy_domain  .cn bangumi.bilibili.com youku.com tudou.com qq.com sohu.com letv.com le.com qiyi.com iqiyi.com mgtv.com hunantv.com soku.com sina.com kankan.com pptv.com pplive.cn kandian.com 163.com 56.com baidu.com iask.com weibo.com yinyuetai.com kugou.com ssports.com douban.fm 126.net xiami.com xunlei.com 2345.com ppstream.com pps.tv duomi.com ysten.com alicdn.com aliyun.com taobao.com tmall.com

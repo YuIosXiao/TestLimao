@@ -1,0 +1,8 @@
+ip 10.8.0.2
+dns 114.114.114.114
+dns 8.8.8.8
+dns_ttl 120
+route 0.0.0.0/0
+proxy_domain instagram youtube cdninstagram haha uuu haha 192.168.1.2
+direct_domain apple.com icloud.com itunes.com crashlytics.com mzstatic.com localhost cn xiaoguoqi.com staging.xiaoguoqi.com licatjsq.com zhulaoban8
+ipproxy 91.108.56.0/22 91.108.4.0/22 192.168.1.2

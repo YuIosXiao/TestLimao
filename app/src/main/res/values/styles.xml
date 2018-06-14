@@ -1,0 +1,212 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/transparent</item>
+        <item name="colorPrimaryDark">@color/appblack</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+    <!-- dialog样式 -->
+    <style name="CheckinDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsFloating">true</item>    <!--是否浮在界面上-->
+        <item name="android:windowIsTranslucent">true</item> <!--是否半透明-->
+        <item name="android:windowNoTitle">true</item>       <!--是否有标题-->
+        <item name="android:windowBackground">@android:color/transparent</item> <!--窗口背景色透明-->
+        <item name="android:backgroundDimEnabled">true</item> <!--背景是否模糊显示-->
+    </style>
+
+    <!-- dialog底部弹出菜单动画 -->
+    <style name="bottom_menu_animation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_exit</item>
+    </style>
+    <!-- dialog左进右出动画 -->
+    <style name="leftright_menu_animation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_enter_left</item>
+        <item name="android:windowExitAnimation">@anim/dialog_exit_right</item>
+    </style>
+
+    <style name="CustomProgressDialog" parent="@style/CustomDialog"></style>
+
+    <!-- 自定义的进度条 -->
+    <style name="CustomDialog" parent="@android:style/Theme.Dialog">
+        <!--是否有标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFrame">@null</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <!--是否模糊-->
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="ActionButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:minWidth">56dp</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:paddingRight">4dp</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!--自定义透明背景 -->
+    <style name="myTransparent">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+    <!--弹窗动画-->
+    <style name="dialog_animation_style">
+        <item name="android:windowEnterAnimation">@anim/dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_exit</item>
+    </style>
+
+    <!--基础宽高样式1-->
+    <style name="BaseContent1">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <!--基础宽高样式2-->
+    <style name="BaseContent2">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <!--基础宽高样式3-->
+    <style name="BaseContent3">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <!--验证码样式-->
+    <style name="VerificationCode">
+        <item name="android:layout_width">@dimen/deimen_276</item>
+        <item name="android:layout_height">@dimen/deimen_98</item>
+        <item name="android:layout_marginLeft">@dimen/deimen_26</item>
+        <item name="android:background">@drawable/code_button</item>
+        <item name="android:text">@string/btn_changepassword_code</item>
+        <item name="android:textColor">@color/appwhite</item>
+        <item name="android:textSize">@dimen/deimen_40s</item>
+
+    </style>
+
+    <!--标题布局样式-->
+    <style name="TitleStyle" parent="BaseContent2">
+        <item name="android:drawableLeft">@mipmap/serverlist_arrow</item>
+        <item name="android:drawablePadding">@dimen/deimen_63</item>
+        <item name="android:paddingLeft">@dimen/deimen_63</item>
+        <item name="android:paddingTop">@dimen/deimen_51</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/deimen_35x</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!--标题辅助文字布局样式-->
+    <style name="TitleStyleAuxiliaryLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/deimen_170</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingTop">@dimen/deimen_34</item>
+        <item name="android:paddingLeft">56dp</item>
+    </style>
+
+    <!--标题辅助文字样式-->
+    <style name="TitleStyleAuxiliary" parent="BaseContent3">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/deimen_48s</item>
+    </style>
+
+    <!--背景布局样式-->
+    <style name="BackgroundLayout" parent="BaseContent3">
+        <item name="android:layout_marginBottom">@dimen/deimen_100</item>
+        <item name="android:layout_marginLeft">@dimen/deimen_34</item>
+        <item name="android:layout_marginRight">@dimen/deimen_34</item>
+        <item name="android:background">@mipmap/user_bg</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!--条目布局样式-->
+    <style name="ItemTatolLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/deimen_98</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginLeft">@dimen/deimen_146</item>
+        <item name="android:layout_marginRight">@dimen/deimen_146</item>
+        <item name="android:layout_marginTop">@dimen/deimen_100</item>
+        <item name="android:gravity">bottom</item>
+    </style>
+
+    <style name="ItemIcon" parent="BaseContent2">
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginBottom">@dimen/deimen_10</item>
+    </style>
+
+    <!--输入框基本样式-->
+    <style name="BaseEditText" parent="BaseContent1">
+        <item name="android:layout_marginBottom">@dimen/deimen_20</item>
+        <item name="android:background">@null</item>
+        <item name="android:paddingLeft">@dimen/deimen_10</item>
+        <item name="android:textColorHint">@color/font_gray3</item>
+        <item name="android:textSize">@dimen/deimen_42s</item>
+        <item name="android:textColor">@color/appblack</item>
+    </style>
+
+    <!--数字输入框样式-->
+    <style name="EditTextInteger" parent="BaseEditText">
+        <item name="android:numeric">integer</item>
+    </style>
+
+    <!--密码输入框样式-->
+    <style name="EditTextPassword" parent="BaseEditText">
+        <!--<item name="android:digits">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^*()~&</item>-->
+        <item name="android:ellipsize">middle</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+
+    <!--标题布局样式XQ-->
+    <style name="TitleStyleTwo">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:drawableLeft">@mipmap/serverlist_arrow</item>
+        <item name="android:drawablePadding">21dp</item>
+        <item name="android:paddingLeft">21dp</item>
+        <item name="android:paddingTop">17dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">35sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!--背景布局样式XQ-->
+    <style name="BackgroundLayoutTwo">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:layout_marginLeft">11dp</item>
+        <item name="android:layout_marginRight">11dp</item>
+        <item name="android:background">@mipmap/user_bg</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+
+    <style name="dialog_style" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowBackground">@color/transparent</item><!--背景透明-->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+
+    <dimen name="deimen_146">49dp</dimen>
+</resources>
