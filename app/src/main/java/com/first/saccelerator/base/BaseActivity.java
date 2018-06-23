@@ -39,6 +39,10 @@ public abstract class BaseActivity extends Activity {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN); //把整个Layout顶上去露出获得焦点的EditText,不压缩多余空间
         init(savedInstanceState);
         StaticStateUtils.basisActivity = BaseActivity.this;
+
+        initView();
+        initData();
+        initListener();
     }
 
     @Override
@@ -129,5 +133,21 @@ public abstract class BaseActivity extends Activity {
 
     protected void init(Bundle savedInstanceState) {
     }
+
+    /**
+     * 加载UI控件
+     */
+    protected abstract void initView();
+
+    /**
+     * 加载数据
+     */
+    protected abstract void initData();
+
+    /**
+     * 加载监听
+     */
+    protected abstract void initListener();
+
 
 }

@@ -26,7 +26,6 @@ import com.first.saccelerator.base.BaseActivity;
 public class MainActivity extends BaseActivity {
 
     private Activity mActivity;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,13 +49,10 @@ public class MainActivity extends BaseActivity {
      * 初始化数据
      */
     public void initData() {
-//        LogUtils.i("手机屏幕宽度(像素)----->" + ScreenUtils.getScreenWidth() + "|" +
-//                "手机屏幕高度(像素)----->" + ScreenUtils.getScreenHeight());
-//        LogUtils.i("手机屏幕密度----->" + ScreenUtils.getScreenDensity(mActivity) + "|" +
-//                "手机屏幕densityDpi----->" + ScreenUtils.getScreendensityDpi(mActivity));
-//        LogUtils.i("手机屏幕宽度(dp)----->" + ScreenUtils.getScreenWidthDP(mActivity) + "|" +
-//                "手机屏幕高度(dp)----->" + ScreenUtils.getScreenHeightDP(mActivity));
     }
 
+    @Override
+    protected void initListener() {
 
+    }
 }

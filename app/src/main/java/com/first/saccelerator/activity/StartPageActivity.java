@@ -65,7 +65,6 @@ public class StartPageActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initView();
         LogUtils.i("手机屏幕宽度(像素)----->" + ScreenUtils.getScreenWidth() + "|" + "手机屏幕高度(像素)----->" + ScreenUtils.getScreenHeight());
         LogUtils.i("手机屏幕密度----->" + ScreenUtils.getScreenDensity(mActivity) + "|" + "手机屏幕densityDpi----->"
                 + ScreenUtils.getScreendensityDpi(mActivity));
@@ -80,6 +79,7 @@ public class StartPageActivity extends BaseActivity {
     /**
      * 初始化控件
      */
+    @Override
     public void initView() {
         mActivity = StartPageActivity.this;
 
@@ -90,9 +90,6 @@ public class StartPageActivity extends BaseActivity {
         final SPUtils sputilsad = new SPUtils(SPConstants.SP_AD);
 
         long startpage_time = Long.parseLong(spUtils.getString(SPConstants.CONFIG.STARTPAGE_TIME, "2000"));
-
-        initData();
-
         if (spUtils.getBoolean(SPConstants.CONFIG.IS_FIRST, true)) {
             timer = new Timer();
             timer.schedule(timerTask, 0, 1000);
@@ -123,6 +120,7 @@ public class StartPageActivity extends BaseActivity {
     /**
      * 初始化数据
      */
+    @Override
     public void initData() {
         // 给用户设置别名，用来呼应极光推送
 //        StaticStateUtils.setAlias(this);
@@ -139,6 +137,11 @@ public class StartPageActivity extends BaseActivity {
         StaticStateUtils.dynamicServers(mActivity);
 
         new MyInstalledReceiver.AppInfoTask().executeOnExecutor(Executors.newCachedThreadPool(), App.getApplication());
+
+    }
+
+    @Override
+    protected void initListener() {
 
     }
 

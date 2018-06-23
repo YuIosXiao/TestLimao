@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/transparent"
+              android:gravity="center">
+
+
+    <LinearLayout
+        android:layout_width="@dimen/dimen_133x"
+        android:layout_height="@dimen/dimen_113x"
+        android:background="@drawable/dialog_shape_black"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.first.saccelerator.view.SlackLoadingView
+            android:id="@+id/loading_view"
+            android:layout_width="@dimen/dimen_77x"
+            android:layout_height="@dimen/dimen_77x"/>
+
+
+        <TextView
+            android:id="@+id/id_tv_loadingmsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:background="#00000000"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="加载中..."
+            android:textColor="#ffffffff"
+            android:textSize="14sp"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+
+</LinearLayout>

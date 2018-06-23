@@ -101,6 +101,10 @@
             android:name="com.first.saccelerator.activity.MainActivity"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.Leanback"/>
+        <activity
+            android:name="com.first.saccelerator.activity.BuyDiamondActivity2"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.Leanback"/>
         <!--<activity-->
         <!--android:name=".ui.activity.GuidePagesActivity"-->
         <!--android:screenOrientation="portrait"/>-->

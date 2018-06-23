@@ -42,7 +42,7 @@ public class FunctionCardPresenter extends Presenter {
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, Object item) {
         ImageCardView cardView = (ImageCardView) viewHolder.view;
-        cardView.setMainImageDimensions(mContext.getResources().getDimensionPixelSize(R.dimen.deimen_200x), mContext.getResources().getDimensionPixelSize(R.dimen.deimen_150x));
+        cardView.setMainImageDimensions(mContext.getResources().getDimensionPixelSize(R.dimen.dimen_200x), mContext.getResources().getDimensionPixelSize(R.dimen.dimen_150x));
         FunctionModel functionModel = (FunctionModel) item;
         cardView.setMainImageScaleType(ImageView.ScaleType.FIT_XY);
         cardView.getMainImageView().setImageResource(functionModel.getIcon());

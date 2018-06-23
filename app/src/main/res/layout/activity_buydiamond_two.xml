@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@mipmap/main_center_bg">
+
+    <include
+        android:id="@+id/my_title_ly"
+        layout="@layout/include_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <com.first.saccelerator.view.CustomLineRecyclerView
+        android:id="@+id/id_recycler_line"
+        android:layout_width="@dimen/dimen_300x"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_include"
+        android:focusable="true"/>
+</RelativeLayout>

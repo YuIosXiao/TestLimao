@@ -4,9 +4,6 @@ package com.first.saccelerator.model;
 import android.content.Context;
 import android.content.Intent;
 
-import com.first.saccelerator.R;
-import com.first.saccelerator.activity.MainActivitySecond;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,14 +46,16 @@ public class FunctionModel {
         mIntent = intent;
     }
 
-    public static List<FunctionModel> getFunctionList(Context context) {
+    public static List<FunctionModel> getFunctionList(Context context, String[] classname_, Object[] class_, int[] image_) {
         List<FunctionModel> functionModels = new ArrayList<>();
 
-        FunctionModel appUninstall = new FunctionModel();
-        appUninstall.setName("连接");
-        appUninstall.setIcon(R.mipmap.category_drama);
-        appUninstall.setIntent(new Intent(context, MainActivitySecond.class));
-        functionModels.add(appUninstall);
+        for (int i = 0; i < classname_.length; i++) {
+            FunctionModel appUninstall = new FunctionModel();
+            appUninstall.setName(classname_[i]);
+            appUninstall.setIcon(image_[i]);
+            appUninstall.setIntent(new Intent(context, (Class<?>) class_[i]));
+            functionModels.add(appUninstall);
+        }
 //        functionModels.add(appUninstall1);
 //        functionModels.add(appUninstall2);
         return functionModels;

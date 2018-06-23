@@ -107,7 +107,7 @@
         <item name="android:paddingLeft">@dimen/deimen_63</item>
         <item name="android:paddingTop">@dimen/deimen_51</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">@dimen/deimen_35x</item>
+        <item name="android:textSize">@dimen/dimen_35x</item>
         <item name="android:textStyle">bold</item>
     </style>
 
