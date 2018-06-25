@@ -14,13 +14,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:background="@drawable/shape_blue_bg"
+        android:background="@drawable/shape_transparent_bg"
         android:ellipsize="marquee"
         android:gravity="center"
         android:padding="@dimen/dimen_35x"
         android:singleLine="true"
         android:text="1111111111"
-        android:textColor="@color/appblack"
+        android:textColor="@color/appwhite"
         android:textSize="30px"/>
 
 </RelativeLayout>

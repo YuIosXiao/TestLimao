@@ -13,8 +13,60 @@
 
     <com.first.saccelerator.view.CustomLineRecyclerView
         android:id="@+id/id_recycler_line"
-        android:layout_width="@dimen/dimen_300x"
+        android:layout_width="@dimen/dimen_200x"
         android:layout_height="match_parent"
         android:layout_below="@+id/tv_include"
         android:focusable="true"/>
+
+    <TextView
+        android:id="@+id/tv_buydiamond_rechargedescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_include"
+        android:layout_marginLeft="@dimen/dimen_150x"
+        android:layout_marginRight="@dimen/dimen_150x"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="11111111"
+        android:textColor="#FF0000"
+        android:textSize="@dimen/dimen_16x"/>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_buydiamond_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_buydiamond_rechargedescription"
+        android:layout_marginRight="@dimen/dimen_130x"
+        android:layout_marginTop="@dimen/dimen_10x"
+        android:layout_toRightOf="@+id/id_recycler_line"
+        android:background="@drawable/shape_transparent_two_bg"
+        android:paddingBottom="@dimen/dimen_10x"
+        android:paddingTop="@dimen/dimen_10x">
+
+        <com.first.saccelerator.view.AlignTextView
+            android:id="@+id/tv_buydiamond_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_15x"
+            android:layout_marginRight="@dimen/dimen_15x"
+            android:lineSpacingExtra="@dimen/dimen_9x"
+            android:singleLine="false"
+            android:text="访问Facebook、twitter、instagram等网站；使用telegram等通讯工具"
+            android:textColor="@color/appwhite"
+            android:textSize="@dimen/dimen_13x"/>
+    </RelativeLayout>
+
+
+    <com.first.saccelerator.view.CustomLineRecyclerView
+        android:id="@+id/clrv_buydiamond_prices"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_buydiamond_rechargedescription"
+        android:layout_marginTop="@dimen/dimen_60x"
+        android:layout_toRightOf="@+id/id_recycler_line"
+        android:focusable="true"/>
+
+
 </RelativeLayout>

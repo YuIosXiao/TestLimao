@@ -46,6 +46,10 @@ public class BuyDiamondActivity2 extends BaseActivity {
     private CustomLineRecyclerView id_recycler_line;
     private BuyDiamondRecyclerOne adapter;
     private TvLinearLayoutManager tvLinearLayoutManager;
+    private TextView tv_buydiamond_rechargedescription;
+    private TextView tv_buydiamond_description;//描述
+    private CustomLineRecyclerView clrv_buydiamond_prices;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,23 +66,17 @@ public class BuyDiamondActivity2 extends BaseActivity {
         mActivity = BuyDiamondActivity2.this;
         tv_include = findViewById(R.id.tv_include);
         id_recycler_line = findViewById(R.id.id_recycler_line);
+        tv_buydiamond_rechargedescription = findViewById(R.id.tv_buydiamond_rechargedescription);
+        tv_buydiamond_description = findViewById(R.id.tv_buydiamond_description);
+        clrv_buydiamond_prices = findViewById(R.id.clrv_buydiamond_prices);
     }
-
-//    private List<Integer> mData;
 
     @Override
     protected void initData() {
         tv_include.setText(App.getApplication().getResources().getString(R.string.tv_buydiamond_titlename));
         tv_include.setTextColor(App.getApplication().getResources().getColor(R.color.appwhite));
 
-
         getPlansv2();
-
-//        mData = new ArrayList<Integer>();
-//        for (int i = 0; i < 3; i++) {
-//            mData.add(i);
-//        }
-
     }
 
     @Override
@@ -117,7 +115,8 @@ public class BuyDiamondActivity2 extends BaseActivity {
                     public void onSuccess(ApiResponse<Plansv2Response> plansv2Response) {
                         stopProgressDialog();
                         if (plansv2Response.isSuccess() && plansv2Response.getData().getTabs().size() > 0) {
-                            adapter = new BuyDiamondRecyclerOne(BuyDiamondActivity2.this, plansv2Response.getData().getTabs());
+                            adapter = new BuyDiamondRecyclerOne(BuyDiamondActivity2.this, plansv2Response.getData().getTabs(), tv_buydiamond_description,
+                                    clrv_buydiamond_prices);
                             id_recycler_line.setItemAnimator(new DefaultItemAnimator());
                             tvLinearLayoutManager = new TvLinearLayoutManager(mActivity);
                             tvLinearLayoutManager.setAutoMeasureEnabled(false);
@@ -125,7 +124,9 @@ public class BuyDiamondActivity2 extends BaseActivity {
                             id_recycler_line.setLayoutManager(tvLinearLayoutManager);
                             id_recycler_line.setAdapter(adapter);
                             adapter.setOnItemClickListener(new LineOnItemClickListener());
-                            id_recycler_line.setSelectedPosition(1);
+
+
+                            tv_buydiamond_rechargedescription.setText(new SPUtils(SPConstants.SP_CONFIG).getString(SPConstants.CONFIG.PAY_DESC, ""));
                         }
                     }
 

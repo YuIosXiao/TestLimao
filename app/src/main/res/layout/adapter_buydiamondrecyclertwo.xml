@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dimen_20x"
+                android:layout_marginTop="@dimen/dimen_20x"
+                android:background="@drawable/frame_bg"
+                android:padding="@dimen/dimen_10x">
+
+
+    <RelativeLayout
+        android:layout_width="@dimen/dimen_200x"
+        android:layout_height="@dimen/dimen_250x"
+        android:background="@drawable/shape_white_bg">
+
+        <RelativeLayout
+            android:id="@+id/rl_buydiamond_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/rl_buydiamond_description"
+            android:layout_marginBottom="@dimen/dimen_10x"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/tv_buydiamond_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tv_buydiamond_mark"
+                android:text="680.00"
+                android:textColor="@color/appblack"
+                android:textSize="@dimen/dimen_35x"/>
+
+            <TextView
+                android:id="@+id/tv_buydiamond_mark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥"
+                android:textColor="@color/appblack"
+                android:textSize="@dimen/dimen_20x"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_buydiamond_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/tv_buydiamond_description1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="￥ 300"
+                android:textColor="#525861"
+                android:textSize="@dimen/dimen_15x"/>
+
+            <TextView
+                android:id="@+id/tv_buydiamond_description2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tv_buydiamond_description1"
+                android:text="立省 ￥92"
+                android:textColor="#32c47c"
+                android:textSize="@dimen/dimen_15x"/>
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tv_buydiamond_description3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_buydiamond_description"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen_10x"
+            android:background="@drawable/buy_tv_bg"
+            android:paddingBottom="@dimen/dimen_3x"
+            android:paddingLeft="@dimen/dimen_10x"
+            android:paddingRight="@dimen/dimen_10x"
+            android:paddingTop="@dimen/dimen_3x"
+            android:text="0.6/天"
+            android:textColor="@color/appblack"
+            android:textSize="@dimen/dimen_14x"/>
+
+
+        <TextView
+            android:id="@+id/tv_buydiamond_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_buydiamond_description3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen_20x"
+            android:text="12个月"
+            android:textColor="#32c474"
+            android:textSize="@dimen/dimen_21x"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>

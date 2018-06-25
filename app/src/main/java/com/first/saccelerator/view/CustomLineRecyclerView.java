@@ -6,14 +6,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.AttributeSet;
-import android.view.FocusFinder;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.first.saccelerator.utils.LogUtils;
 
 import java.util.List;
 
@@ -51,68 +48,68 @@ public class CustomLineRecyclerView extends RecyclerView {
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
         boolean result = super.dispatchKeyEvent(event);
-        View focusView = this.getFocusedChild();
-        if (focusView == null) {
-            return result;
-        } else {
-            int dy = 0;
-            int dx = 0;
-            if (getChildCount() > 0) {
-                View firstView = this.getChildAt(0);
-                dy = firstView.getHeight();
-                dx = firstView.getWidth();
-            }
-            if (event.getAction() == KeyEvent.ACTION_UP) {
-                return result;
-            } else {
-                switch (event.getKeyCode()) {
-                    case KeyEvent.KEYCODE_DPAD_RIGHT:
-                        View rightView = FocusFinder.getInstance().findNextFocus(this, focusView, View.FOCUS_RIGHT);
-                        LogUtils.i("rightView is null:" + (rightView == null));
-                        if (rightView != null) {
-                            rightView.requestFocus();
-                            return true;
-                        } else {
-                            this.smoothScrollBy(dx, 0);
-                            return true;
-                        }
-                    case KeyEvent.KEYCODE_DPAD_LEFT:
-                        View leftView = FocusFinder.getInstance().findNextFocus(this, focusView, View.FOCUS_LEFT);
-                        LogUtils.i("leftView is null:" + (leftView == null));
-                        if (leftView != null) {
-                            leftView.requestFocus();
-                            return true;
-                        } else {
-                            this.smoothScrollBy(-dx, 0);
-                            return true;
-                        }
-                    case KeyEvent.KEYCODE_DPAD_DOWN:
-                        View downView = FocusFinder.getInstance().findNextFocus(this, focusView, View.FOCUS_DOWN);
-                        LogUtils.i(" downView is null:" + (downView == null));
-                        if (downView != null) {
-                            downView.requestFocus();
-                            return true;
-                        } else {
-                            this.smoothScrollBy(0, dy);
-                            return true;
-                        }
-                    case KeyEvent.KEYCODE_DPAD_UP:
-                        View upView = FocusFinder.getInstance().findNextFocus(this, focusView, View.FOCUS_UP);
-                        LogUtils.i("upView is null:" + (upView == null));
-                        if (event.getAction() == KeyEvent.ACTION_UP) {
-                            return true;
-                        } else {
-                            if (upView != null) {
-                                upView.requestFocus();
-                                return true;
-                            } else {
-                                this.smoothScrollBy(0, -dy);
-                                return true;
-                            }
-                        }
-                }
-            }
-        }
+//        View focusView = this.getFocusedChild();
+//        if (focusView == null) {
+//            return result;
+//        } else {
+//            int dy = 0;
+//            int dx = 0;
+//            if (getChildCount() > 0) {
+//                View firstView = this.getChildAt(0);
+//                dy = firstView.getHeight();
+//                dx = firstView.getWidth();
+//            }
+//            if (event.getAction() == KeyEvent.ACTION_UP) {
+//                return result;
+//            } else {
+//                switch (event.getKeyCode()) {
+//                    case KeyEvent.KEYCODE_DPAD_RIGHT:
+//                        View rightView = FocusFinder.getInstance().findNextFocus(this, focusView, View.FOCUS_RIGHT);
+//                        LogUtils.i("rightView is null:" + (rightView == null));
+//                        if (rightView != null) {
+//                            rightView.requestFocus();
+//                            return true;
+//                        } else {
+//                            this.smoothScrollBy(dx, 0);
+//                            return true;
+//                        }
+//                    case KeyEvent.KEYCODE_DPAD_LEFT:
+//                        View leftView = FocusFinder.getInstance().findNextFocus(this, focusView, View.FOCUS_LEFT);
+//                        LogUtils.i("leftView is null:" + (leftView == null));
+//                        if (leftView != null) {
+//                            leftView.requestFocus();
+//                            return true;
+//                        } else {
+//                            this.smoothScrollBy(-dx, 0);
+//                            return true;
+//                        }
+//                    case KeyEvent.KEYCODE_DPAD_DOWN:
+//                        View downView = FocusFinder.getInstance().findNextFocus(this, focusView, View.FOCUS_DOWN);
+//                        LogUtils.i(" downView is null:" + (downView == null));
+//                        if (downView != null) {
+//                            downView.requestFocus();
+//                            return true;
+//                        } else {
+//                            this.smoothScrollBy(0, dy);
+//                            return true;
+//                        }
+//                    case KeyEvent.KEYCODE_DPAD_UP:
+//                        View upView = FocusFinder.getInstance().findNextFocus(this, focusView, View.FOCUS_UP);
+//                        LogUtils.i("upView is null:" + (upView == null));
+//                        if (event.getAction() == KeyEvent.ACTION_UP) {
+//                            return true;
+//                        } else {
+//                            if (upView != null) {
+//                                upView.requestFocus();
+//                                return true;
+//                            } else {
+//                                this.smoothScrollBy(0, -dy);
+//                                return true;
+//                            }
+//                        }
+//                }
+//            }
+//        }
         return result;
     }
 

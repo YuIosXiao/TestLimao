@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.view.ViewCompat;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,46 +12,35 @@ import android.widget.TextView;
 import com.first.saccelerator.R;
 import com.first.saccelerator.model.Plansv2Response;
 import com.first.saccelerator.view.CustomLineRecyclerView;
-import com.first.saccelerator.view.TvLinearLayoutManager;
 
 import java.util.List;
 
 /**
- * Created by admin on 2018/6/21.
+ * Created by admin on 2018/6/25.
  */
 
-public class BuyDiamondRecyclerOne extends CustomLineRecyclerView.CustomAdapter<Plansv2Response.TabsBean> {
+public class BuyDiamondRecyclerTwo extends CustomLineRecyclerView.CustomAdapter<Plansv2Response.TabsBean.PlansBean> {
 
 
-    private TextView tv_buydiamond_description;
-    private CustomLineRecyclerView clrv_buydiamond_prices;
-    private TvLinearLayoutManager tvLinearLayoutManager2;
-    private Context mcontext;
-    private BuyDiamondRecyclerTwo adpter;
-
-    public BuyDiamondRecyclerOne(Context context, List<Plansv2Response.TabsBean> data, TextView tv_buydiamond_description,
-                                 CustomLineRecyclerView clrv_buydiamond_prices) {
+    public BuyDiamondRecyclerTwo(Context context, List<Plansv2Response.TabsBean.PlansBean> data) {
         super(context, data);
-        this.mcontext = context;
-        this.tv_buydiamond_description = tv_buydiamond_description;
-        this.clrv_buydiamond_prices = clrv_buydiamond_prices;
     }
 
     @Override
     protected RecyclerView.ViewHolder onSetViewHolder(View view) {
-        return new BuyDiamondViewHolder(view);
+        return new BuyDiamondTwoViewHolder(view);
     }
 
     @NonNull
     @Override
     protected int onSetItemLayout() {
-        return R.layout.adapter_buydiamondrecyclerone;
+        return R.layout.adapter_buydiamondrecyclertwo;
     }
 
     @Override
     protected void onSetItemData(RecyclerView.ViewHolder viewHolder, int position) {
-        BuyDiamondViewHolder holder = (BuyDiamondViewHolder) viewHolder;
-        holder.tv_focus.setText(mData.get(position).getName());
+        BuyDiamondTwoViewHolder holder = (BuyDiamondTwoViewHolder) viewHolder;
+        holder.tv_buydiamond_description1.setText(mData.get(position).getDescription1());
     }
 
     @Override
@@ -66,14 +54,6 @@ public class BuyDiamondRecyclerOne extends CustomLineRecyclerView.CustomAdapter<
             parent.requestLayout();
             parent.invalidate();
         }
-        tv_buydiamond_description.setText(mData.get(position).getDescription());
-        adpter = new BuyDiamondRecyclerTwo(mContext, mData.get(position).getPlans());
-        tvLinearLayoutManager2 = new TvLinearLayoutManager(mcontext);
-        tvLinearLayoutManager2.setAutoMeasureEnabled(false);
-        tvLinearLayoutManager2.setOrientation(LinearLayoutManager.HORIZONTAL);
-        clrv_buydiamond_prices.setLayoutManager(tvLinearLayoutManager2);
-        clrv_buydiamond_prices.setAdapter(adpter);
-
     }
 
     @Override
@@ -94,13 +74,24 @@ public class BuyDiamondRecyclerOne extends CustomLineRecyclerView.CustomAdapter<
         return mData.size();
     }
 
-    public class BuyDiamondViewHolder extends RecyclerView.ViewHolder {
-        public TextView tv_focus;
+    public class BuyDiamondTwoViewHolder extends RecyclerView.ViewHolder {
+        private TextView tv_buydiamond_price;
+        private TextView tv_buydiamond_mark;
+        private TextView tv_buydiamond_description1;
+        private TextView tv_buydiamond_description2;
+        private TextView tv_buydiamond_description3;
+        private TextView tv_buydiamond_name;
 
-        public BuyDiamondViewHolder(View itemView) {
+        public BuyDiamondTwoViewHolder(View itemView) {
             super(itemView);
-            tv_focus = (TextView) itemView.findViewById(R.id.tv_focus);
+            tv_buydiamond_price = itemView.findViewById(R.id.tv_buydiamond_price);
+            tv_buydiamond_mark = itemView.findViewById(R.id.tv_buydiamond_mark);
+            tv_buydiamond_description1 = itemView.findViewById(R.id.tv_buydiamond_description1);
+            tv_buydiamond_description2 = itemView.findViewById(R.id.tv_buydiamond_description2);
+            tv_buydiamond_description3 = itemView.findViewById(R.id.tv_buydiamond_description3);
+            tv_buydiamond_name = itemView.findViewById(R.id.tv_buydiamond_name);
         }
     }
+
 
 }
