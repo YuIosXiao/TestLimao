@@ -48,7 +48,7 @@ public class CustomLineRecyclerView extends RecyclerView {
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
         boolean result = super.dispatchKeyEvent(event);
-//        View focusView = this.getFocusedChild();
+        View focusView = this.getFocusedChild();
 //        if (focusView == null) {
 //            return result;
 //        } else {
