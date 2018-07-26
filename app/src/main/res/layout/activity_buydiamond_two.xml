@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@mipmap/main_center_bg">
+                android:background="@color/user_black_bg">
 
     <include
         android:id="@+id/my_title_ly"
@@ -18,30 +18,40 @@
         android:layout_below="@+id/tv_include"
         android:focusable="true"/>
 
-    <TextView
-        android:id="@+id/tv_buydiamond_rechargedescription"
+
+    <RelativeLayout
+        android:id="@+id/rl_buydiamond2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dimen_44x"
         android:layout_below="@+id/tv_include"
-        android:layout_marginLeft="@dimen/dimen_150x"
-        android:layout_marginRight="@dimen/dimen_150x"
-        android:ellipsize="end"
-        android:gravity="center"
-        android:singleLine="true"
-        android:text="11111111"
-        android:textColor="#FF0000"
-        android:textSize="@dimen/dimen_16x"/>
+        android:layout_marginLeft="@dimen/dimen_200x"
+        android:layout_marginRight="@dimen/dimen_200x"
+        android:background="#4d3d3d52">
+
+        <TextView
+            android:id="@+id/tv_buydiamond_rechargedescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="11111111"
+            android:textColor="@color/font_gray1"
+            android:textSize="@dimen/dimen_16x"/>
+
+    </RelativeLayout>
 
 
     <RelativeLayout
         android:id="@+id/rl_buydiamond_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_buydiamond_rechargedescription"
-        android:layout_marginRight="@dimen/dimen_130x"
+        android:layout_below="@+id/rl_buydiamond2"
+        android:layout_marginRight="@dimen/dimen_200x"
         android:layout_marginTop="@dimen/dimen_10x"
         android:layout_toRightOf="@+id/id_recycler_line"
-        android:background="@drawable/shape_transparent_two_bg"
+        android:background="#4d3d3d52"
         android:paddingBottom="@dimen/dimen_10x"
         android:paddingTop="@dimen/dimen_10x">
 
@@ -49,6 +59,7 @@
             android:id="@+id/tv_buydiamond_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:layout_marginLeft="@dimen/dimen_15x"
             android:layout_marginRight="@dimen/dimen_15x"
             android:lineSpacingExtra="@dimen/dimen_9x"
@@ -63,8 +74,8 @@
         android:id="@+id/clrv_buydiamond_prices"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/tv_buydiamond_rechargedescription"
-        android:layout_marginTop="@dimen/dimen_60x"
+        android:layout_below="@+id/rl_buydiamond2"
+        android:layout_marginTop="@dimen/dimen_70x"
         android:layout_toRightOf="@+id/id_recycler_line"
         android:focusable="true"/>
 

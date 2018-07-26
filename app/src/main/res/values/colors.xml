@@ -66,5 +66,6 @@
 
     <drawable name="history_pressed2">#f3f3f3</drawable>
     <color name="norwhite">#ffffff</color>
+    <color name="user_black_bg">#212122</color>
 
 </resources>

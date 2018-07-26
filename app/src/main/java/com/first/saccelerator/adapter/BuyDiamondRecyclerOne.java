@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.first.saccelerator.R;
 import com.first.saccelerator.model.Plansv2Response;
@@ -73,7 +74,7 @@ public class BuyDiamondRecyclerOne extends CustomLineRecyclerView.CustomAdapter<
         tvLinearLayoutManager2.setOrientation(LinearLayoutManager.HORIZONTAL);
         clrv_buydiamond_prices.setLayoutManager(tvLinearLayoutManager2);
         clrv_buydiamond_prices.setAdapter(adpter);
-
+        adpter.setOnItemClickListener(new LineOnItemClickListener());
     }
 
     @Override
@@ -102,5 +103,23 @@ public class BuyDiamondRecyclerOne extends CustomLineRecyclerView.CustomAdapter<
             tv_focus = (TextView) itemView.findViewById(R.id.tv_focus);
         }
     }
+
+
+    /**
+     * RecyclerView点击事件
+     */
+    private class LineOnItemClickListener implements BuyDiamondRecyclerOne.OnItemClickListener {
+
+        @Override
+        public void onItemClick(View view, int position) {
+            Toast.makeText(mcontext, "Line_click:" + position, Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onItemLongClick(View view, int position) {
+            Toast.makeText(mcontext, "Line_click:" + position, Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
 }

@@ -119,23 +119,23 @@ public class StaticStateUtils {
 //    public static String bath3 = "https://xiaoguoqi.com";
 //    public static String bath4 = "https://xiaoguoqi.com";
     //测试服务器地址
-    public static String usebath = "https://staging.xiaoguoqi.com/";
-    public static String bath = "https://staging.xiaoguoqi.com/";
-    public static String bath1 = "https://staging.xiaoguoqi.com/";
-    public static String bath2 = "https://staging.xiaoguoqi.com/";
-    public static String bath3 = "https://staging.xiaoguoqi.com/";
-    public static String bath4 = "https://staging.xiaoguoqi.com/";
-    public static String bath5 = "https://staging.xiaoguoqi.com/";
-    public static String bath6 = "https://staging.xiaoguoqi.com/";
-    public static String bath7 = "https://staging.xiaoguoqi.com/";
-    public static String bath8 = "https://staging.xiaoguoqi.com/";
-    public static String bath9 = "https://staging.xiaoguoqi.com/";
-    public static String bath10 = "https://staging.xiaoguoqi.com/";
-    public static String bath11 = "https://staging.xiaoguoqi.com/";
-    public static String bath12 = "https://staging.xiaoguoqi.com/";
-    public static String bath13 = "https://staging.xiaoguoqi.com/";
-    public static String bath14 = "https://staging.xiaoguoqi.com/";
-    public static String bath15 = "https://staging.xiaoguoqi.com/";
+    public static String usebath = "https://staging1.xiaoguoqi.com/";
+    public static String bath = "https://staging1.xiaoguoqi.com/";
+    public static String bath1 = "https://staging1.xiaoguoqi.com/";
+    public static String bath2 = "https://staging1.xiaoguoqi.com/";
+    public static String bath3 = "https://staging1.xiaoguoqi.com/";
+    public static String bath4 = "https://staging1.xiaoguoqi.com/";
+    public static String bath5 = "https://staging1.xiaoguoqi.com/";
+    public static String bath6 = "https://staging1.xiaoguoqi.com/";
+    public static String bath7 = "https://staging1.xiaoguoqi.com/";
+    public static String bath8 = "https://staging1.xiaoguoqi.com/";
+    public static String bath9 = "https://staging1.xiaoguoqi.com/";
+    public static String bath10 = "https://staging1.xiaoguoqi.com/";
+    public static String bath11 = "https://staging1.xiaoguoqi.com/";
+    public static String bath12 = "https://staging1.xiaoguoqi.com/";
+    public static String bath13 = "https://staging1.xiaoguoqi.com/";
+    public static String bath14 = "https://staging1.xiaoguoqi.com/";
+    public static String bath15 = "https://staging1.xiaoguoqi.com/";
     //正式地址
 //    public static String usebath = "https://zhulaoban8.com/";
 //    public static String bath = "https://zhulaoban8.com/";
@@ -237,7 +237,7 @@ public class StaticStateUtils {
     public static String userhttphead_proxyform = "direct";
 
     //客户端提交ip日志地址,测试环境
-    public static String userhttphead_ip = "https://staging.xiaoguoqi.com:7888/putdata_client";
+    public static String userhttphead_ip = "https://staging1.xiaoguoqi.com:7888/putdata_client";
 
     public static UserhttpheadDataSource userhttpheaddatasource = null;
 

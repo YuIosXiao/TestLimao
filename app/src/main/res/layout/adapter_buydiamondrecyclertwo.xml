@@ -2,16 +2,25 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_20x"
                 android:layout_marginRight="@dimen/dimen_20x"
                 android:layout_marginTop="@dimen/dimen_20x"
-                android:background="@drawable/frame_bg"
-                android:padding="@dimen/dimen_10x">
+                android:background="@drawable/frame2_bg"
+                android:padding="@dimen/dimen_3x">
 
 
     <RelativeLayout
         android:layout_width="@dimen/dimen_200x"
         android:layout_height="@dimen/dimen_250x"
         android:background="@drawable/shape_white_bg">
+
+
+        <ImageView
+            android:id="@+id/iv_buydiamond_recommend"
+            android:layout_width="@dimen/dimen_35x"
+            android:layout_height="@dimen/dimen_18x"
+            android:src="@mipmap/buydiamond_recommend"
+            android:visibility="gone"/>
 
         <RelativeLayout
             android:id="@+id/rl_buydiamond_price"
@@ -28,7 +37,7 @@
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/tv_buydiamond_mark"
                 android:text="680.00"
-                android:textColor="@color/appblack"
+                android:textColor="#333333"
                 android:textSize="@dimen/dimen_35x"/>
 
             <TextView
@@ -36,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="￥"
-                android:textColor="@color/appblack"
+                android:textColor="#333333"
                 android:textSize="@dimen/dimen_20x"/>
         </RelativeLayout>
 
@@ -54,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:text="￥ 300"
-                android:textColor="#525861"
+                android:textColor="#b354575e"
                 android:textSize="@dimen/dimen_15x"/>
 
             <TextView
@@ -64,7 +73,7 @@
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/tv_buydiamond_description1"
                 android:text="立省 ￥92"
-                android:textColor="#32c47c"
+                android:textColor="#a196f3"
                 android:textSize="@dimen/dimen_15x"/>
         </RelativeLayout>
 
@@ -82,7 +91,7 @@
             android:paddingRight="@dimen/dimen_10x"
             android:paddingTop="@dimen/dimen_3x"
             android:text="0.6/天"
-            android:textColor="@color/appblack"
+            android:textColor="@color/appwhite"
             android:textSize="@dimen/dimen_14x"/>
 
 
@@ -94,7 +103,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/dimen_20x"
             android:text="12个月"
-            android:textColor="#32c474"
+            android:textColor="#34c37e"
             android:textSize="@dimen/dimen_21x"/>
     </RelativeLayout>
 
