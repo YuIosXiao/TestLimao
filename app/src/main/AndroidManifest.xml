@@ -135,9 +135,9 @@
         <!--<activity-->
         <!--android:name=".ui.activity.ServerListSecondActivity"-->
         <!--android:screenOrientation="portrait"/>-->
-        <!--<activity-->
-        <!--android:name=".ui.activity.UserActivity"-->
-        <!--android:screenOrientation="portrait"/>-->
+        <activity
+            android:name="com.first.saccelerator.activity.UserActivity"
+            android:screenOrientation="portrait"/>
         <!--<activity-->
         <!--android:name=".ui.activity.AboutusSecondActivity"-->
         <!--android:screenOrientation="portrait"/>-->

@@ -10,6 +10,6 @@
         android:layout_marginLeft="@dimen/dimen_20x"
         android:layout_marginTop="@dimen/dimen_20x"
         android:text="我的标题"
-        android:textColor="@color/appblack"
+        android:textColor="@color/appwhite"
         android:textSize="@dimen/dimen_30x"/>
 </merge>

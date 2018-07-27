@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/user_black_bg">
+
+    <include
+        android:id="@+id/my_title_ly"
+        layout="@layout/include_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_user_personalinformation"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_100x"
+        android:layout_below="@+id/tv_include"
+        android:layout_marginTop="@dimen/dimen_20x"
+        android:background="@drawable/transparent_bg_two">
+
+        <ImageView
+            android:id="@+id/iv_user_personal"
+            android:layout_width="@dimen/dimen_90x"
+            android:layout_height="@dimen/dimen_90x"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/dimen_5x"
+            android:src="@mipmap/user_personal"/>
+
+        <TextView
+            android:id="@+id/tv_user_coins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_user_type"
+            android:layout_alignBottom="@+id/tv_user_type"
+            android:layout_alignLeft="@+id/tv_user_username"
+            android:layout_alignStart="@+id/tv_user_username"
+            android:text="钻石  50"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/dimen_14x"/>
+
+        <TextView
+            android:id="@+id/tv_user_type"
+            android:layout_width="@dimen/dimen_50x"
+            android:layout_height="@dimen/dimen_25x"
+            android:layout_marginLeft="@dimen/dimen_10x"
+            android:layout_marginTop="@dimen/dimen_9x"
+            android:layout_toRightOf="@+id/tv_user_coins"
+            android:background="@mipmap/user_type_bg"
+            android:paddingBottom="@dimen/dimen_5x"
+            android:paddingLeft="@dimen/dimen_10x"
+            android:paddingRight="@dimen/dimen_10x"
+            android:text="VIP5"
+            android:textColor="@color/appblack"
+            android:textSize="@dimen/dimen_14x"/>
+
+        <TextView
+            android:id="@+id/tv_user_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_user_coins"
+            android:layout_marginLeft="@dimen/dimen_15x"
+            android:layout_marginTop="@dimen/dimen_5x"
+            android:layout_toRightOf="@+id/iv_user_personal"
+            android:text="sup00000001"
+            android:textColor="#d9712d"
+            android:textSize="@dimen/dimen_14x"/>
+
+        <TextView
+            android:id="@+id/tv_user_passwordtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_user_username"
+            android:layout_marginLeft="@dimen/dimen_15x"
+            android:layout_marginTop="@dimen/dimen_8x"
+            android:layout_toRightOf="@+id/iv_user_personal"
+            android:text="@string/tv_user_password"
+            android:textColor="@color/appwhite"
+            android:textSize="@dimen/dimen_14x"/>
+
+        <TextView
+            android:id="@+id/tv_user_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_user_username"
+            android:layout_marginLeft="@dimen/dimen_6x"
+            android:layout_marginTop="@dimen/dimen_8x"
+            android:layout_toRightOf="@+id/tv_user_passwordtitle"
+            android:text="sup00000001"
+            android:textColor="@color/appwhite"
+            android:textSize="@dimen/dimen_14x"/>
+    </RelativeLayout>
+
+
+    <com.first.saccelerator.view.CustomLineRecyclerView
+        android:id="@+id/clrv_user_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_user_personalinformation"
+        android:layout_marginTop="@dimen/dimen_15x"
+        android:focusable="true"/>
+
+
+</RelativeLayout>

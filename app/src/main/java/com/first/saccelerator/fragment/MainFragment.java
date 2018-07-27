@@ -21,6 +21,7 @@ import android.util.DisplayMetrics;
 import com.first.saccelerator.R;
 import com.first.saccelerator.activity.BuyDiamondActivity2;
 import com.first.saccelerator.activity.MainActivitySecond;
+import com.first.saccelerator.activity.UserActivity;
 import com.first.saccelerator.constants.SPConstants;
 import com.first.saccelerator.database.DBHelper;
 import com.first.saccelerator.database.LoginRecordDataSource;
@@ -461,15 +462,15 @@ public class MainFragment extends BrowseFragment {
     }
 
     private String[] classname_ = {
-            "连接", "购买"
+            "连接", "购买", "个人中心"
     };
 
     private Object[] class_ = {
-            MainActivitySecond.class, BuyDiamondActivity2.class
+            MainActivitySecond.class, BuyDiamondActivity2.class, UserActivity.class
     };
 
     private int[] image_ = {
-            R.mipmap.category_drama, R.mipmap.category_comedy
+            R.mipmap.category_drama, R.mipmap.category_comedy, R.mipmap.category_action
     };
 
 
